@@ -1,0 +1,187 @@
+[raonzena]  OpenCL :  False
+ * Serving Flask app "server" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+2022-05-06 21:09:28,365 - werkzeug - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2022-05-06 21:09:28,365 - werkzeug - INFO -  * Restarting with stat
+2022-05-06 21:09:28,621 - werkzeug - WARNING -  * Debugger is active!
+2022-05-06 21:09:28,622 - werkzeug - INFO -  * Debugger PIN: 254-276-222
+2022-05-06 21:09:43,360 - werkzeug - INFO - 163.239.22.43 - - [06/May/2022 21:09:43] "[37mGET /login_check?loginid=1&loginpw=1 HTTP/1.1[0m" 200 -
+2022-05-06 21:09:43,586 - werkzeug - INFO - 163.239.22.43 - - [06/May/2022 21:09:43] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:09:46,039 - werkzeug - INFO - 163.239.22.43 - - [06/May/2022 21:09:46] "[37mGET /stream HTTP/1.1[0m" 200 -
+2022-05-06 21:09:48,458 - werkzeug - INFO - 163.239.22.43 - - [06/May/2022 21:09:48] "[37mGET /login_check?loginid=2&loginpw=2 HTTP/1.1[0m" 200 -
+2022-05-06 21:09:48,614 - werkzeug - INFO - 163.239.22.43 - - [06/May/2022 21:09:48] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:09:48,975 - werkzeug - INFO - 163.239.22.43 - - [06/May/2022 21:09:48] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:09:51,212 - werkzeug - INFO - 163.239.22.43 - - [06/May/2022 21:09:51] "[37mGET /stream HTTP/1.1[0m" 200 -
+2022-05-06 21:11:12,377 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:11:12] "[37mGET /login_check?loginid=1&loginpw=1 HTTP/1.1[0m" 200 -
+2022-05-06 21:11:12,559 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:11:12] "[37mGET /static/style.css HTTP/1.1[0m" 200 -
+2022-05-06 21:11:12,570 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:11:12] "[37mGET /static/index_style.css HTTP/1.1[0m" 200 -
+2022-05-06 21:11:13,554 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:11:13] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:11:15,614 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:11:15] "[37mGET /stream HTTP/1.1[0m" 200 -
+2022-05-06 21:11:15,712 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:11:15] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2022-05-06 21:11:18,686 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:11:18] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:11:23,784 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:11:23] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:11:28,858 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:11:28] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:11:33,939 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:11:33] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:11:39,038 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:11:39] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:11:44,097 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:11:44] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:11:45,058 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:11:45] "[37mGET /login_check?loginid=2&loginpw=2 HTTP/1.1[0m" 200 -
+2022-05-06 21:11:45,715 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:11:45] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:11:47,971 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:11:47] "[37mGET /stream HTTP/1.1[0m" 200 -
+2022-05-06 21:11:49,674 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:11:49] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:11:50,887 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:11:50] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:11:51,460 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:11:51] "[37mGET /login_check?loginid=1&loginpw=1 HTTP/1.1[0m" 200 -
+2022-05-06 21:11:51,941 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:11:51] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:11:54,066 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:11:54] "[37mGET /stream HTTP/1.1[0m" 200 -
+2022-05-06 21:11:55,736 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:11:55] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:11:59,138 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:11:59] "[37mGET /login_check?loginid=3&loginpw=3 HTTP/1.1[0m" 200 -
+2022-05-06 21:11:59,705 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:11:59] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:12:01,673 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:12:01] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:12:02,680 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:12:02] "[37mGET /stream HTTP/1.1[0m" 200 -
+2022-05-06 21:12:04,226 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:12:04] "[37mGET / HTTP/1.1[0m" 200 -
+2022-05-06 21:12:04,609 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:12:04] "[37mGET /static/images/fb.png HTTP/1.1[0m" 200 -
+2022-05-06 21:12:04,615 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:12:04] "[37mGET /static/images/tw.png HTTP/1.1[0m" 200 -
+2022-05-06 21:12:04,655 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:12:04] "[37mGET /static/images/gl.png HTTP/1.1[0m" 200 -
+2022-05-06 21:12:04,667 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:12:04] "[37mGET /static/images/background.jpg HTTP/1.1[0m" 200 -
+2022-05-06 21:12:05,680 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:12:05] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:12:07,668 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:12:07] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:12:10,077 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:12:10] "[37mGET /login_check?loginid=1&loginpw=1 HTTP/1.1[0m" 200 -
+2022-05-06 21:12:10,549 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:12:10] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:12:11,671 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:12:11] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:12:13,304 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:12:13] "[37mGET /stream HTTP/1.1[0m" 200 -
+2022-05-06 21:12:13,698 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:12:13] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:12:15,645 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:12:15] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:12:17,668 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:12:17] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:12:19,663 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:12:19] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:12:20,719 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:12:20] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:12:23,672 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:12:23] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:12:25,670 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:12:25] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:12:25,796 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:12:25] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:12:29,684 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:12:29] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:12:30,837 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:12:30] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:12:31,655 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:12:31] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:12:35,655 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:12:35] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:12:36,649 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:12:36] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:12:37,667 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:12:37] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:12:41,679 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:12:41] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:12:42,656 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:12:42] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:12:43,638 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:12:43] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:12:47,661 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:12:47] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:12:48,675 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:12:48] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:12:49,670 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:12:49] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:12:53,686 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:12:53] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:12:54,672 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:12:54] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:12:55,672 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:12:55] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:12:59,663 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:12:59] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:13:00,675 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:13:00] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:13:01,661 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:13:01] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:13:05,662 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:13:05] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:13:06,664 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:13:06] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:13:07,669 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:13:07] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:13:11,694 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:13:11] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:13:12,664 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:13:12] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:13:13,672 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:13:13] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:13:17,662 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:13:17] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:13:18,664 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:13:18] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:13:19,671 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:13:19] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:13:23,678 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:13:23] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:13:24,691 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:13:24] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:13:25,675 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:13:25] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:13:29,664 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:13:29] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:13:30,677 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:13:30] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:13:31,672 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:13:31] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:13:35,663 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:13:35] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:13:36,673 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:13:36] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:13:37,674 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:13:37] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:13:41,676 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:13:41] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:13:42,674 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:13:42] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:13:43,653 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:13:43] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:13:47,667 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:13:47] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:13:48,645 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:13:48] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:13:49,656 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:13:49] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:13:53,671 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:13:53] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:13:54,109 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:13:54] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:13:55,666 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:13:55] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:13:58,495 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:13:58] "[37mGET /login_check?loginid=2&loginpw=2 HTTP/1.1[0m" 200 -
+2022-05-06 21:13:58,855 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:13:58] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:13:59,672 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:13:59] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:14:01,654 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:14:01] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:14:02,384 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:14:02] "[37mGET /stream HTTP/1.1[0m" 200 -
+2022-05-06 21:14:04,018 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:14:04] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:14:05,580 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:14:05] "[37mGET /stream HTTP/1.1[0m" 200 -
+2022-05-06 21:14:08,553 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:14:08] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:14:08,565 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:14:08] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:14:09,070 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:14:09] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:14:13,609 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:14:13] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:14:14,430 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:14:14] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:14:19,578 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:14:19] "[37mGET /login_check?loginid=3&loginpw=3 HTTP/1.1[0m" 200 -
+2022-05-06 21:14:19,923 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:14:19] "[37mGET /live-data HTTP/1.1[0m" 200 -
+2022-05-06 21:14:23,340 - werkzeug - INFO - 121.171.124.140 - - [06/May/2022 21:14:23] "[37mGET /stream HTTP/1.1[0m" 200 -
+2022-05-06 23:03:41,148 - werkzeug - INFO -  * Detected change in '/home/ubuntu/raon_streaming/server.py', reloading
+[raonzena]  OpenCL :  False
+stop!
+stop!
+stop!
+stop!
+stop!
+stop!
+stop!
+stop!
+stop!
+stop!
+stop!
+stop!
+stop!
+stop!
+stop!
+stop!
+stop!
+stop!
+stop!
+stop!
+[raonzena]  OpenCL :  False
+ * Serving Flask app "server" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+2022-05-07 02:18:44,370 - werkzeug - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2022-05-07 02:18:44,371 - werkzeug - INFO -  * Restarting with stat
+2022-05-07 02:18:44,685 - werkzeug - WARNING -  * Debugger is active!
+2022-05-07 02:18:44,685 - werkzeug - INFO -  * Debugger PIN: 254-276-222
+2022-05-07 02:18:51,146 - werkzeug - INFO - 49.172.57.171 - - [07/May/2022 02:18:51] "[37mGET / HTTP/1.1[0m" 200 -
+2022-05-07 02:18:54,356 - werkzeug - INFO - 49.172.57.171 - - [07/May/2022 02:18:54] "[37mGET /login_check?loginid=1&loginpw=1 HTTP/1.1[0m" 200 -
+2022-05-07 02:18:55,065 - werkzeug - INFO - 49.172.57.171 - - [07/May/2022 02:18:55] "[37mGET /gauge HTTP/1.1[0m" 200 -
+2022-05-07 02:18:57,837 - werkzeug - INFO - 49.172.57.171 - - [07/May/2022 02:18:57] "[37mGET /stream HTTP/1.1[0m" 200 -
+2022-05-07 02:19:55,169 - werkzeug - INFO - 49.172.57.171 - - [07/May/2022 02:19:55] "[37mGET /gauge HTTP/1.1[0m" 200 -
+2022-05-07 02:20:55,236 - werkzeug - INFO - 49.172.57.171 - - [07/May/2022 02:20:55] "[37mGET /gauge HTTP/1.1[0m" 200 -
+2022-05-07 02:21:55,291 - werkzeug - INFO - 49.172.57.171 - - [07/May/2022 02:21:55] "[37mGET /gauge HTTP/1.1[0m" 200 -
+2022-05-07 02:22:55,352 - werkzeug - INFO - 49.172.57.171 - - [07/May/2022 02:22:55] "[37mGET /gauge HTTP/1.1[0m" 200 -
+2022-05-07 02:23:55,412 - werkzeug - INFO - 49.172.57.171 - - [07/May/2022 02:23:55] "[37mGET /gauge HTTP/1.1[0m" 200 -
+2022-05-07 02:24:55,848 - werkzeug - INFO - 49.172.57.171 - - [07/May/2022 02:24:55] "[37mGET /gauge HTTP/1.1[0m" 200 -
+2022-05-07 02:25:56,825 - werkzeug - INFO - 49.172.57.171 - - [07/May/2022 02:25:56] "[37mGET /gauge HTTP/1.1[0m" 200 -
+2022-05-07 02:26:57,826 - werkzeug - INFO - 49.172.57.171 - - [07/May/2022 02:26:57] "[37mGET /gauge HTTP/1.1[0m" 200 -
+2022-05-07 02:27:58,857 - werkzeug - INFO - 49.172.57.171 - - [07/May/2022 02:27:58] "[37mGET /gauge HTTP/1.1[0m" 200 -
+2022-05-07 02:28:59,853 - werkzeug - INFO - 49.172.57.171 - - [07/May/2022 02:28:59] "[37mGET /gauge HTTP/1.1[0m" 200 -
+2022-05-07 02:30:00,830 - werkzeug - INFO - 49.172.57.171 - - [07/May/2022 02:30:00] "[37mGET /gauge HTTP/1.1[0m" 200 -
+2022-05-07 02:31:01,839 - werkzeug - INFO - 49.172.57.171 - - [07/May/2022 02:31:01] "[37mGET /gauge HTTP/1.1[0m" 200 -
+2022-05-07 02:32:02,825 - werkzeug - INFO - 49.172.57.171 - - [07/May/2022 02:32:02] "[37mGET /gauge HTTP/1.1[0m" 200 -
+2022-05-07 02:33:03,842 - werkzeug - INFO - 49.172.57.171 - - [07/May/2022 02:33:03] "[37mGET /gauge HTTP/1.1[0m" 200 -
+2022-05-07 02:34:04,829 - werkzeug - INFO - 49.172.57.171 - - [07/May/2022 02:34:04] "[37mGET /gauge HTTP/1.1[0m" 200 -
+2022-05-07 02:35:05,830 - werkzeug - INFO - 49.172.57.171 - - [07/May/2022 02:35:05] "[37mGET /gauge HTTP/1.1[0m" 200 -
+2022-05-07 02:35:42,158 - werkzeug - INFO - 2.57.122.218 - - [07/May/2022 02:35:42] "[37mGET / HTTP/1.1[0m" 200 -
+2022-05-07 02:35:42,744 - werkzeug - INFO - 2.57.122.218 - - [07/May/2022 02:35:42] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2022-05-07 02:36:06,834 - werkzeug - INFO - 49.172.57.171 - - [07/May/2022 02:36:06] "[37mGET /gauge HTTP/1.1[0m" 200 -
+2022-05-07 08:16:36,861 - werkzeug - ERROR - 167.94.138.61 - - [07/May/2022 08:16:36] code 400, message Bad request syntax ('\x16\x03\x01\x00î\x01\x00\x00ê\x03\x03é\x8cØ?J\x8c°mÎá=½â5®\x0f\x06þæ\x0bÊ\x1a²¸<ÌiQ\x00?5Û \x8eÙ\x04K\x97çpù\x11\x99ÓÊ\\ã©[¦\x84Ý\x17Nc\x95¹ê\x93Ù\x99`\x91Àî\x00&Ì¨Ì©À/À0À+À,À\x13À\tÀ\x14À')
+2022-05-07 08:16:36,862 - werkzeug - INFO - 167.94.138.61 - - [07/May/2022 08:16:36] "[35m[1m î  êéØ?J°mÎá=½â5®þæÊ²¸<ÌiQ ?5Û ÙKçpùÓÊ\ã©[¦ÝNc¹êÙ`Àî &Ì¨Ì©À/À0À+À,ÀÀ	ÀÀ[0m" HTTPStatus.BAD_REQUEST -
+2022-05-07 08:16:38,230 - werkzeug - INFO - 167.94.138.61 - - [07/May/2022 08:16:38] "[37mGET / HTTP/1.1[0m" 200 -
+2022-05-07 08:16:38,586 - werkzeug - INFO - 167.94.138.61 - - [07/May/2022 08:16:38] "[37mGET / HTTP/1.1[0m" 200 -
+2022-05-07 08:16:38,955 - werkzeug - ERROR - 167.94.138.61 - - [07/May/2022 08:16:38] code 505, message Invalid HTTP version (2.0)
+2022-05-07 08:16:38,955 - werkzeug - INFO - 167.94.138.61 - - [07/May/2022 08:16:38] "[35m[1mPRI * HTTP/2.0[0m" HTTPStatus.HTTP_VERSION_NOT_SUPPORTED -
+2022-05-07 08:40:21,077 - werkzeug - INFO - 205.210.31.156 - - [07/May/2022 08:40:21] "[37mGET / HTTP/1.1[0m" 200 -
+2022-05-07 17:32:16,862 - werkzeug - INFO -  * Detected change in '/home/ubuntu/raon_streaming/server.py', reloading
+[raonzena]  OpenCL :  False
+stop!
+stop!

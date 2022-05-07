@@ -1,0 +1,101 @@
+<html>
+<head>
+    <title>Raonzena Fighting!</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index_style.css') }}" />
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script> -->
+    <!-- Above two css and js file affect the component placement -->
+
+    <!--High CHART LIVE  -->
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <script src="http://code.highcharts.com/highcharts-more.js"></script>
+    <script src="http://code.highcharts.com/modules/exporting.js"></script>
+    <!--Gauge  -->
+    <script type="text/javascript" src="http://pubnub.github.io/eon/lib/eon.js"></script>    
+</head>
+
+<body>
+<div class="container-fluid">
+  <div class="row">
+      <div class="container-fluid" id="data-container"></div>
+    </div>
+</div>
+
+<script>
+var chart;
+function capture() {
+    $.ajax({
+        url: '/capture',
+        success: function(result) {
+            alert("Capture Success!")
+        },
+        error: function(result) {
+            alert("Capture Fail!")
+        }
+    });
+}
+
+function requestData() {
+    $.ajax({
+        url: '/live-data',
+        success: function(point) {
+            var series1 = chart.series[0];
+            var shift1 = series1.data.length > 20;
+
+            var series2 = chart.series[1];
+            var shift2 = series2.data.length > 20;
+
+            series1.addPoint([point[0],point[1]], false, shift1);
+            series2.addPoint([point[0],point[2]], true, shift2);
+
+            setTimeout(requestData, 1000);
+        },
+    });
+}
+$(document).ready(function() {
+    Highcharts.setOptions({
+                global: {
+                    useUTC: false
+                }
+            });
+
+    chart = new Highcharts.Chart({
+        chart: {
+            renderTo: 'data-container',
+            defaultSeriesType: 'spline',
+            events: {
+                load: requestData
+            }
+        },
+        title: {
+            text: 'Realtime Temperature/Humidity'
+        },
+        xAxis: {
+            type: 'datetime',
+            tickPixelInterval: 150,
+            maxZoom: 20 * 1000
+        },
+        yAxis: {
+            minPadding: 0.8,
+            maxPadding: 0.2,
+            title: {
+                text: 'Degree',
+                margin: 80
+            }
+        },
+        series: [{
+            name: 'Temperature', 
+            data: []},
+            {
+            name: 'Humidity', 
+            data: []
+        }]
+    });
+});
+</script>
+</body>
+</html>
+
+

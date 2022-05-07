@@ -1,0 +1,18 @@
+{
+    "flask_settings":{
+        "CAPTURE_PATH": "FILE_PATH",
+        "SECRET_KEY": "SECRET_KEY"
+    },
+    "mysql_settings":{
+        "MYSQL_HOST":"",
+        "MYSQL_USER": "",
+        "MYSQL_PASSWORD":"",
+        "MYSQL_DB":"",
+        "MYSQL_CHARSET":""
+    },
+    "mongo_settings":{
+        "MONGO_HOST":"mongodb://HOST:PORT",
+        "MONGO_DB":"",
+        "MONGO_COLLECTION":""
+    }
+}

@@ -1,0 +1,61 @@
+<html>
+
+<head>
+    <title>Login Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="form-wrap">
+            <div class="button-wrap">
+                <div id="btn"></div>
+                <button type="button" class="togglebtn" onclick="login()">Login</button>
+                <button type="button" class="togglebtn" onclick="register()">Register</button>
+            </div>
+            <div class="social-icons">
+                <img src={{ url_for('static', filename='images/fb.png' ) }} alt="facebook">
+                <img src={{ url_for('static', filename='images/tw.png' ) }} alt="twitter">
+                <img src={{ url_for('static', filename='images/gl.png' ) }} alt="google">
+            </div>
+            <form id="login" action="/login_check" method="GET" class="input-group">
+                <input name="loginid" type="text" class="input-field" placeholder="User Name" required>
+                <input name="loginpw" type="password" class="input-field" placeholder="Enter Password" required>
+                <button class="submit">Login</button>
+            </form>
+            <form id="register" action="/join" method="POST" class="input-group">
+                <input name="joinid" type="text" class="input-field" placeholder="User Name" required>
+                <input name="hiddenid" type="hidden" class="input-field" value="asdasd" placeholder="User Name" required>
+                <input name="joinem" type="email" class="input-field" value="asdasd" placeholder="Your Email" required>
+                <input name="joinpw" type="password" class="input-field" value="asdasd" placeholder="Enter Password"
+                    required>
+                <button class="submit">Register</button>
+            </form>
+
+        </div>
+    </div>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <script>alert("{{messages[-1]}}")</script>
+    {% endif %}
+    {% endwith %}
+    <script type="text/javascript">
+        var x = document.getElementById("login");
+        var y = document.getElementById("register");
+        var z = document.getElementById("btn");
+
+        function login() {
+            x.style.left = "50px";
+            y.style.left = "450px";
+            z.style.left = "0";
+        }
+
+        function register() {
+            x.style.left = "-400px";
+            y.style.left = "50px";
+            z.style.left = "110px";
+        }
+    </script>
+</body>
+</html>
