@@ -4,13 +4,15 @@ import pymysql
 import os
 import time
 import pymongo
+import secrets
 
-from flask import Flask, render_template, request, Response, stream_with_context, flash, make_response
+from flask import Flask, render_template, request, Response, stream_with_context, flash, make_response, session
 from flask_bootstrap import Bootstrap
 from random import random
 from utils import logger
 from pytz import timezone
 from streamer import RaonStreamer
+from datetime import timedelta
 
 # Fetch common configuration properties.
 # When you modify config, you have to modify config.json
@@ -34,7 +36,8 @@ MONGO_DB = mongo_settings['MONGO_DB']
 MONGO_COLLECTION = mongo_settings['MONGO_COLLECTION']
 
 application = Flask(__name__)
-application.secret_key = SECRET_KEY
+application.secret_key = secrets.token_hex(16)
+application.PERMANENT_SESSION_LIFETIME = timedelta(minutes=10)
 
 # Initialize CLASS file.
 Bootstrap(application)
@@ -68,7 +71,12 @@ def stream():
 
 @application.route('/')
 def login():
-    return render_template('login.html')
+    if 'id' in session:
+        id = session['id']
+        flash("이미 같은 ID가 로그인되었습니다.")
+        return render_template('login.html')
+    else:
+        return render_template('login.html')
 
 @application.route('/join', methods=['POST'])
 def join():
@@ -143,10 +151,13 @@ def login_check():
         connection.close()
 
     if str(joinIdByQuery) != "":
+        session.permanent = True
         global userid
         global stream_src
         userid = joinIdByQuery
         stream_src = joinStreamByQuery
+        session['id'] = userid
+        # session['stream'] = stream_src
         return render_template('index.html', msg=joinid)
     else:
         flash('Your ID or Password is not correct!')
@@ -169,4 +180,4 @@ def live_data():
     return response
 
 if __name__ == '__main__':
-    application.run(host='0.0.0.0', port=5000, debug=False, threaded=True)
+    application.run(host='0.0.0.0', port=5000, debug=True, threaded=True)
