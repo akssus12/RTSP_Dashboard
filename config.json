@@ -4,7 +4,7 @@
         "SECRET_KEY": "raonzena"
     },
     "mysql_settings":{
-        "MYSQL_HOST":"133.186.213.88",
+        "MYSQL_HOST":"192.168.0.75",
         "MYSQL_USER": "root",
         "MYSQL_PASSWORD":"raon",
         "MYSQL_DB":"raonzena",

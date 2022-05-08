@@ -48,11 +48,11 @@ class RaonStreamer :
     
     def stop(self):                
         self.started = True
-        print('stop!')
         
-        # if self.capture is not None :            
-        #     self.capture.release()
-        #     self.clear()
+        if self.capture is not None :            
+            #self.capture.release()
+            self.clear()
+            print('self.clear')
             
     def update(self):
                     

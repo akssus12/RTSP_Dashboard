@@ -8,6 +8,7 @@ import secrets
 
 from flask import Flask, render_template, request, Response, stream_with_context, flash, make_response, session
 from flask_bootstrap import Bootstrap
+# from flask_socketio import SocketIO, emit
 from random import random
 from utils import logger
 from pytz import timezone
@@ -36,11 +37,12 @@ MONGO_DB = mongo_settings['MONGO_DB']
 MONGO_COLLECTION = mongo_settings['MONGO_COLLECTION']
 
 application = Flask(__name__)
-application.secret_key = secrets.token_hex(16)
-application.PERMANENT_SESSION_LIFETIME = timedelta(minutes=10)
+secret_key_session = secrets.token_hex(16)
+application.secret_key = secret_key_session
 
 # Initialize CLASS file.
 Bootstrap(application)
+# socketio = SocketIO(application)
 streamer = RaonStreamer()
 
 # Global variables to maintain whole source.
@@ -58,6 +60,12 @@ def stream_gen(src, userid, timer):
     except GeneratorExit:
         streamer.stop()
 
+@application.before_request
+def make_session_permanent():
+    session.permanent = True
+    application.permanent_session_lifetime = timedelta(minutes=10)
+
+
 @application.route('/stream')
 def stream():
     src = stream_src
@@ -73,8 +81,7 @@ def stream():
 def login():
     if 'id' in session:
         id = session['id']
-        flash("이미 같은 ID가 로그인되었습니다.")
-        return render_template('login.html')
+        return render_template('index.html', msg=id)
     else:
         return render_template('login.html')
 
@@ -151,7 +158,6 @@ def login_check():
         connection.close()
 
     if str(joinIdByQuery) != "":
-        session.permanent = True
         global userid
         global stream_src
         userid = joinIdByQuery
