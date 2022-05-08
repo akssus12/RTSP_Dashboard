@@ -42,40 +42,55 @@ application.secret_key = secret_key_session
 
 # Initialize CLASS file.
 Bootstrap(application)
-# socketio = SocketIO(application)
+# Multi-threading RSTP Streaminer
 streamer = RaonStreamer()
+# socketio = SocketIO(application)
+
 
 # Global variables to maintain whole source.
 userid = ""
 stream_src = ""
 
 def stream_gen(src, userid, timer):
-    try:
-        streamer.run(src)
-        while True:
+    streamObject = streamer.run(src)
+    while streamObject:
+        try:
             frame = streamer.bytescode(userid, timer)
             timer += 1
             yield (b'--frame\r\n'
                    b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
-    except GeneratorExit:
-        streamer.stop()
+            time.sleep(0.05)
+        except GeneratorExit as e:
+            logger.error("GeneratorExit RTPS : " + str(e))
+            continue
+
+    # try:
+    #     streamer.run(src)
+    #     while True:
+    #         frame = streamer.bytescode(userid, timer)
+    #         timer += 1
+    #         yield (b'--frame\r\n'
+    #                b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
+    #         time.sleep(0.5)
+    # except GeneratorExit as e:
+    #     logger.error("GeneratorExit RTPS : " + str(e))
+    #     continue
 
 @application.before_request
 def make_session_permanent():
     session.permanent = True
     application.permanent_session_lifetime = timedelta(minutes=10)
 
-
 @application.route('/stream')
 def stream():
-    src = stream_src
+    src = session['stream']
+    logger.error("rtsp url : " + src)
     timer = 0
     try:
         return Response(stream_with_context(stream_gen(src, userid, timer)),
                         mimetype='multipart/x-mixed-replace; boundary=frame')
     except Exception as e:
         print('[FlaskServer] ', 'stream error : ', str(e))
-
 
 @application.route('/')
 def login():
@@ -104,7 +119,7 @@ def join():
                 result = curs.fetchall()
                 str_result = str(result)
         except Exception as e:
-                logger.info("join duplicate check error " + str(e))
+                logger.error("join duplicate check error " + str(e))
         finally:
             connection.close()
 
@@ -120,7 +135,7 @@ def join():
                 os.makedirs(userFilepath, exist_ok=True)
                 connection.commit()
             except Exception as e:
-                logger.info("insert error " + str(e))
+                logger.error("insert error " + str(e))
                 connection.rollback()
             finally:
                 connection.close()
@@ -153,7 +168,9 @@ def login_check():
             joinIdByQuery = result[0]
             joinStreamByQuery = result[1]
     except Exception as e:
-        logger.info("login check error " + str(e))
+        logger.error("login check error " + str(e))
+        flash('Your ID is not existed. Check one more please!')
+        return render_template('login.html', TITLE=TITLE)
     finally:
         connection.close()
 
@@ -163,7 +180,7 @@ def login_check():
         userid = joinIdByQuery
         stream_src = joinStreamByQuery
         session['id'] = userid
-        # session['stream'] = stream_src
+        session['stream'] = stream_src
         return render_template('index.html', msg=joinid)
     else:
         flash('Your ID or Password is not correct!')

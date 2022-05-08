@@ -5,7 +5,7 @@ import json
 logger = logging.getLogger()
 
 # log level
-logger.setLevel(logging.INFO)
+logger.setLevel(logging.ERROR)
 
 # log format
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
