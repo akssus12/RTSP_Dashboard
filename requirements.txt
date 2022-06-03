@@ -13,3 +13,4 @@ imutils==0.5.4
 scikit-build==0.14.1
 cmake==3.22.4
 pymongo==4.1.1
+glob2==0.4.1

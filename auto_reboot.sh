@@ -1,5 +1,4 @@
 #!/bin/bash
-
 ps -elf | grep server.py | awk '{print $4}' > temp.txt
 
 cat temp.txt | while read line || [[ -n "$line" ]];

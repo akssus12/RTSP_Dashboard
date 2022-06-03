@@ -5,8 +5,9 @@ import os
 import time
 import pymongo
 import secrets
+import glob
 
-from flask import Flask, render_template, request, Response, stream_with_context, flash, make_response, session
+from flask import Flask, render_template, request, Response, stream_with_context, flash, make_response, session, jsonify
 from flask_bootstrap import Bootstrap
 # from flask_socketio import SocketIO, emit
 from random import random
@@ -188,6 +189,8 @@ def login_check():
 
 @application.route('/gauge')
 def live_data():
+    temperature = ""
+    humidity = ""
     mongo_client = pymongo.MongoClient(MONGO_HOST)
     mongo_db = mongo_client[MONGO_DB]
     mongo_collection = mongo_db[MONGO_COLLECTION]
@@ -201,6 +204,105 @@ def live_data():
     response = make_response(json.dumps(data))
     response.content_type = 'application/json'
     return response
+
+@application.route('/setNickname', methods=['POST'])
+def set_nickname():
+    nickNameByQuery = ""
+    content = request.get_json()
+    logger.error("first content : " + str(content))
+    nickName = content['action']['params']['id_check_text']
+    logger.error("prepared content : " + str(nickName))
+    
+    global userid
+    userid = str(nickName)
+    finalText = userid +"님 환영합니다. 메뉴에서 원하는 기능을 선택해보세요!"
+    
+    dataSend = {
+        "version" : "2.0",
+        "template" : {
+            "outputs" : [
+                {
+                    "simpleText" : {
+                        "text" : finalText
+                    }
+                }
+            ]
+        }
+    }
+    return jsonify(dataSend)
+
+@application.route('/getImageByNickname', methods=['POST'])
+def get_image_nickname():
+    logger.error("get_image_nickname -- " + str(userid) )
+    if str(userid) == "":
+        dataSend = {
+        "version" : "2.0",
+        "template" : {
+            "outputs" : [
+                {
+                    "simpleText" : {
+                        "text" : "메뉴를 통해 닉네임을 입력해주세요!"
+                    }
+                }
+            ]
+        }
+    }
+    else:
+        filepathByNickname = CAPTURE_PATH + userid + "/*"
+        list_of_files = glob.glob(filepathByNickname) # * means all if need specific format then *.csv
+        latest_file = max(list_of_files, key=os.path.getctime)
+        # fullAbsoluteFilePath = CAPTURE_PATH + userid + "/" + latest_file
+
+        logger.error("get_image_nickname latest_file-- " + str(latest_file))
+        dataSend = {
+        "version" : "2.0",
+        "template" : {
+            "outputs" : [
+                {
+                    "simpleImage": {
+                        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fa/CDN_Kia_Magentis.jpg",
+                        "altText": "현재 사진이 없습니다."
+                    }
+                }
+            ]
+        }
+    }
+
+    return jsonify(dataSend)
+
+@application.route('/validateNickname', methods=['POST'])
+def vaildate_nickname():
+    validateNickname = ""
+    validateStatus = ""
+    content = request.get_json()
+    nickName = content['value']['resolved']
+    
+    streamByJoinId_SQL = "SELECT joinid, stream FROM raonzena.joininfo WHERE joinid = '{}'".format(str(nickName))
+
+    try:
+        connection = pymysql.connect(host=MYSQL_HOST, user=MYSQL_USER,
+                             password=MYSQL_PASSWORD, db=MYSQL_DB, charset=MYSQL_CHARSET, autocommit=True)
+        with connection.cursor() as curs:
+            curs.execute(streamByJoinId_SQL)
+            result = curs.fetchone()
+            validateNickname = result[0]
+    except Exception as e:
+        logger.error("login check error " + str(e))
+        #flash('Your ID is not existed. Check one more please!')
+        #return render_template('login.html', TITLE=TITLE)
+    finally:
+        connection.close()
+
+    if str(validateNickname) != "":
+        validateStatus = "SUCCESS"
+    else:
+        validateStatus = "FAIL"
+        
+    dataSend = {
+        "status": validateStatus
+    }
+
+    return jsonify(dataSend)
 
 if __name__ == '__main__':
     application.run(host='0.0.0.0', port=5000, debug=True, threaded=True)
