@@ -253,6 +253,10 @@ def get_image_nickname():
         latest_file = max(list_of_files, key=os.path.getctime)
         # fullAbsoluteFilePath = CAPTURE_PATH + userid + "/" + latest_file
 
+        splitByUrl = latest_file.split('/')
+        finalImageUrl = "/" + splitByUrl[3] + "/" + splitByUrl[4]
+
+        imageUrl = "http://133.186.228.38" + finalImageUrl 
         logger.error("get_image_nickname latest_file-- " + str(latest_file))
         dataSend = {
         "version" : "2.0",
@@ -260,7 +264,7 @@ def get_image_nickname():
             "outputs" : [
                 {
                     "simpleImage": {
-                        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fa/CDN_Kia_Magentis.jpg",
+                        "imageUrl": imageUrl,
                         "altText": "현재 사진이 없습니다."
                     }
                 }
