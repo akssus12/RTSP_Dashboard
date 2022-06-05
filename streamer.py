@@ -83,9 +83,9 @@ class RaonStreamer :
         else :
             logger.error("Frame Queue Count : " + str(self.Q.qsize()))  
             frame = imutils.resize(self.read(), width=int(self.width) )
-            if timer % 10000 == 0:
+            if timer % 30000 == 0:
                 currentTime = int(time.time())
-                fileName = "/data/raonzena_capture/" + userid + "/" + str(currentTime) + ".jpg"
+                fileName = "/var/www/" + userid + "/" + str(currentTime) + ".jpg"
                 cv2.imwrite(fileName,frame)
             else:
                 pass

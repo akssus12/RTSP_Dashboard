@@ -249,6 +249,7 @@ def get_image_nickname():
     }
     else:
         filepathByNickname = CAPTURE_PATH + userid + "/*"
+        logger.error("get_image_nickname filepathByNickname-- " + str(filepathByNickname))
         list_of_files = glob.glob(filepathByNickname) # * means all if need specific format then *.csv
         latest_file = max(list_of_files, key=os.path.getctime)
         # fullAbsoluteFilePath = CAPTURE_PATH + userid + "/" + latest_file
@@ -266,6 +267,51 @@ def get_image_nickname():
                     "simpleImage": {
                         "imageUrl": imageUrl,
                         "altText": "현재 사진이 없습니다."
+                    }
+                }
+            ]
+        }
+    }
+
+    return jsonify(dataSend)
+
+@application.route('/getGaugeByNickname', methods=['POST'])
+def get_gauge_nickname():
+    logger.error("getGaugeByNickname get_gauge_nickname()")
+    if str(userid) == "":
+        dataSend = {
+        "version" : "2.0",
+        "template" : {
+            "outputs" : [
+                {
+                    "simpleText" : {
+                        "text" : "메뉴를 통해 닉네임을 입력해주세요!"
+                    }
+                }
+            ]
+        }
+    }
+    else:
+        temperature = ""
+        humidity = ""
+        logger.error("getGaugeByNickname mongodb")
+        mongo_client = pymongo.MongoClient(MONGO_HOST)
+        mongo_db = mongo_client[MONGO_DB]
+        mongo_collection = mongo_db[MONGO_COLLECTION]
+
+        gauge_raon = mongo_collection.find().limit(1).sort([('$natural',-1)])
+        for gauge in gauge_raon:
+            temperature = gauge["tmp"]
+            humidity = gauge["hum"]
+        finalText = "현재 식물 재배의 온도는 " + str(temperature) + "도, 습도는 " + str(humidity) + " 입니다."
+        logger.error("getGaugeByNickname finalText -- " + finalText)
+        dataSend = {
+        "version" : "2.0",
+        "template" : {
+            "outputs" : [
+                {
+                    "simpleText" : {
+                        "text" : finalText
                     }
                 }
             ]
